@@ -8,13 +8,16 @@ import pandas as pd
 import numpy as np
 
 def read_requirements():
-    try:
-        with open('/Users/kj/Downloads/word2vec-streamlit-main 2/requirements.txt', 'r') as file:
-            requirements = file.read().splitlines()
-        return requirements
-    except Exception as e:
-        st.error(f"Error reading requirements.txt: {str(e)}")
-        return []
+    return [
+        "streamlit>=1.32.0",
+        "nltk>=3.8.1",
+        "gensim==4.3.2",
+        "scikit-learn>=1.4.0",
+        "matplotlib>=3.8.0",
+        "pandas>=2.1.0",
+        "numpy>=1.24.0,<1.26.0",
+        "scipy==1.10.0"
+    ]
 
 # Download necessary NLTK datasets with explicit error handling
 @st.cache_resource
